@@ -1,3 +1,5 @@
+from constants import Base, engine
+from repositories import DbSeeder
 
 
 def main():
@@ -6,6 +8,8 @@ def main():
 
 
 if __name__ == '__main__':
-    # Inicijaliziraj bazu ako baza ne postoji
-    # Napuni bazu s osnovnim podacima
+    Base.metadata.create_all(engine)
+    db_seeder = DbSeeder()
+    db_seeder.seed_db()
+
     main()

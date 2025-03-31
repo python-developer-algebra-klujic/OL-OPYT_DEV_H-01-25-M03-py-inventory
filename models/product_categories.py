@@ -1,6 +1,15 @@
-# TODO - Kreirati clasu koja cuva podatke o kategorijama proizvoda
-# te koja nasljeduje Base iz SQL Alchemy paketa
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship, backref
+
+from constants import (NAME_LENGTH, Base)
 
 
-class ProductCategory:
-    pass
+class ProductCategory(Base):
+    __tablename__ = 'categories'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(length=NAME_LENGTH), nullable=False, default='No name')
+
+    products = relationship('Product', backref=backref('category'))
+
+    def __repr__(self):
+        return f'Category: {self.name}'
