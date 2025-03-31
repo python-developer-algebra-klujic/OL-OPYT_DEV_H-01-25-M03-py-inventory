@@ -7,5 +7,5 @@ engine = create_engine('sqlite:///databases/inventory.db')
 
 Base = declarative_base()
 
-Session = sessionmaker(bind=engine)
+Session = sessionmaker(bind=engine, autoflush=False)
 session = Session()
