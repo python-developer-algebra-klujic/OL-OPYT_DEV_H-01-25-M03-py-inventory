@@ -6,5 +6,6 @@ def main():
 
 
 if __name__ == '__main__':
-    # Inicijaliziraj bazu s osnovnim podacima
+    # Inicijaliziraj bazu ako baza ne postoji
+    # Napuni bazu s osnovnim podacima
     main()
