@@ -1,18 +1,12 @@
 from constants import Base, engine
-from repositories import DbSeeder, ProductCategoriesRepo
+from repositories import DbSeeder
+from UI import list_categories_w_products, list_categories_wo_products
 
 
 def main():
-    # Pokreni aplikaciju
-    product_categories_repo = ProductCategoriesRepo()
-    for product_category in product_categories_repo.get_product_categories():
-        print()
-        print('CATEGORY', end='\t')
-        print(product_category)
-        print('PRODUCTS:')
-        for index, product in enumerate(product_category.products):
-            print(f'{index + 1}.{'\t'}{product}')
-        print()
+    list_categories_wo_products()
+    print()
+    list_categories_w_products()
 
 
 if __name__ == '__main__':
