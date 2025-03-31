@@ -32,10 +32,10 @@ class ProductCategoriesRepo:
     def create_product_category(self, product_category: ProductCategory) -> ProductCategory:
         try:
             product_category_from_db = (self.session
-                                    .query(ProductCategory)
-                                    .filter(
-                                        ProductCategory.name == product_category.name,
-                                    ).one_or_none())
+                                            .query(ProductCategory)
+                                            .filter(
+                                                ProductCategory.name == product_category.name,
+                                            ).one_or_none())
 
             if product_category_from_db == None:
                 self.session.add(product_category)

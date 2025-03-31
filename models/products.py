@@ -14,4 +14,4 @@ class Product(Base):
     category_id = Column(Integer, ForeignKey('categories.id'))
 
     def __repr__(self):
-        return f'Product: {self.name} ({self.code} / {self.price} EUR)'
+        return f'Product: {self.name} ({self.code} / {self.price:.2f} EUR)'
